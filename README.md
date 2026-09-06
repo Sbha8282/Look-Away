@@ -19,16 +19,9 @@ View your app in AI Studio: https://ai.studio/apps/c127550e-b3c8-4a9f-a6e0-f9fb0
 3. Run the app:
    `npm run dev`
 
-## Report Email Delivery
+## Reports
 
-The primary report email is saved as the user's default and remains prefilled until changed. The optional secondary email is used only for the current report and starts blank on the next report.
-
-Automatic delivery uses the Netlify Function at `/.netlify/functions/send-report` and the Netlify Email Templates integration. Add the `report` template from [emails/report/index.html](emails/report/index.html), then configure these environment variables in Netlify:
-
-- `NETLIFY_EMAILS_SECRET`: The secret configured for Netlify Email Templates
-- `REPORT_FROM_EMAIL`: Sender address accepted by your email provider
-
-`URL` is supplied by Netlify automatically. When a report is created, its contents are sent to the primary address and, when provided, the secondary address.
+The primary report email is saved as the user's default and remains prefilled until changed. The optional secondary email is used only for the current report and starts blank on the next report. Reports are saved locally in the app.
 
 ## Android and iOS
 
