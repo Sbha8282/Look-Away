@@ -29,47 +29,47 @@ export function EngagementDetailScreen({
       icon: Heart,
       value: engagement.feelings?.length
         ? engagement.feelings.join(', ')
-        : 'Hungry, Stressed',
+        : 'Not recorded',
     },
     {
       label: 'Location',
       icon: MapPin,
       value: engagement.locations?.length
         ? engagement.locations.join(', ')
-        : 'Driving, On Phone',
+        : 'Not recorded',
     },
     {
       label: 'Attire',
       icon: Sparkles,
       value: engagement.attire?.length
         ? engagement.attire.join(', ')
-        : 'Yoga Pants, Tight Jeans',
+        : 'Not recorded',
     },
     {
       label: 'Eyes Went To',
       icon: Eye,
       value: engagement.eyesWentTo?.length
         ? engagement.eyesWentTo.join(', ')
-        : 'Butt, Legs',
+        : 'Not recorded',
     },
     {
       label: 'Her Body Type',
       icon: User,
       value: engagement.herBuild?.length
         ? engagement.herBuild.join(', ')
-        : 'Curvy, Long Legs',
+        : 'Not recorded',
     },
     {
       label: 'Hair Color',
       icon: Palette,
-      value: engagement.hairColor || 'Brown / Auburn',
+      value: engagement.hairColor || 'Not recorded',
     },
     {
       label: 'Comments',
       icon: MessageSquare,
       value:
         engagement.comments ||
-        'Visual engagement logged.',
+        'Not recorded',
     },
     {
       label: 'Triggers',
@@ -101,7 +101,7 @@ export function EngagementDetailScreen({
         {/* Score Banner */}
         <div className="text-center pb-3">
           <span className="inline-block px-3 py-1 rounded-full bg-[#f1ca63]/10 border border-[#f1ca63]/30 text-xs font-serif-gold font-bold text-[#f1ca63] tracking-wider">
-            Score: {engagement.scoreLabel}
+            Score: {engagement.score}/4 · {engagement.scoreLabel}
           </span>
         </div>
 

@@ -396,6 +396,7 @@ export function ShowcaseView({
           endDate="2025-05-24"
           onBack={() => onOpenScreenInSimulator('create_report')}
           onViewEngagements={() => onOpenScreenInSimulator('engagements_list')}
+          onSelectEngagement={() => onOpenScreenInSimulator('engagement_detail')}
         />
       ),
     },

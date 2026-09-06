@@ -600,6 +600,10 @@ export default function App() {
             triggerEntries={lastReport?.triggers || []}
             onBack={() => setCurrentStep('create_report')}
             onViewEngagements={() => setCurrentStep('engagements_list')}
+            onSelectEngagement={(item) => {
+              setSelectedEngagement(item);
+              setCurrentStep('engagement_detail');
+            }}
           />
         );
 
