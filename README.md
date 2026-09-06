@@ -21,7 +21,9 @@ View your app in AI Studio: https://ai.studio/apps/c127550e-b3c8-4a9f-a6e0-f9fb0
 
 ## Reports
 
-The primary report email is saved as the user's default and remains prefilled until changed. The optional secondary email is used only for the current report and starts blank on the next report. Reports are saved locally in the app.
+The primary report email is saved as the user's default and remains prefilled until changed. The optional secondary email is used only for the current report and starts blank on the next report. Reports are saved locally in the app and sent through the server's GMass SMTP connection when configured.
+
+To configure email delivery, copy `.env.example` to `.env` and replace the placeholders with the SMTP credentials from your GMass account. Keep `.env` private and run the app with `npm run dev` or `npm start`.
 
 ## Android and iOS
 

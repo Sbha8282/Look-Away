@@ -560,6 +560,27 @@ export default function App() {
               }));
               setLastReport(report);
               setReports((previous) => [report, ...previous]);
+              void fetch('/api/send-report', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ report, user }),
+              })
+                .then(async (response) => {
+                  if (response.ok) return;
+
+                  let message = 'The report email could not be sent.';
+                  try {
+                    const body = await response.json();
+                    if (body.error) message = body.error;
+                  } catch {
+                    // Keep the fallback message when the server returns a non-JSON response.
+                  }
+                  throw new Error(message);
+                })
+                .catch((error) => {
+                  console.error('Report email delivery failed:', error);
+                  window.alert(`Report email was not sent: ${error.message}`);
+                });
               setCurrentStep('report_summary');
             }}
             onBack={() => setCurrentStep('home')}
